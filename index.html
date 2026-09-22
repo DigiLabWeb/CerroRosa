@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cerro Rosa — Inicio</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=Fredoka:wght@500;600;700&family=M+PLUS+Rounded+1c:wght@500;700;800;900&family=Press+Start+2P&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root{
+  --bg:#161310;
+  --bg-pattern: repeating-linear-gradient(0deg, rgba(255,255,255,0.025) 0px, rgba(255,255,255,0.025) 1px, transparent 1px, transparent 3px), repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 3px);
+  --bg-size: auto;
+  --surface:#211d19;
+  --surface-alt:#2a2621;
+  --border:#35312b;
+  --border-w:2px;
+  --ink:#f4efe6;
+  --headline:#f4efe6;
+  --ink-dim:#a39c8f;
+  --ink-dim2:#706a5e;
+  --accent:#fcacee;
+  --shadow2:#161310;
+  --btn-ink:#161310;
+  --radius-card:6px;
+  --radius-pill:999px;
+  --font-body:'Fredoka', sans-serif;
+  --badge-font:'IBM Plex Mono', monospace;
+  --active-pill:#ffffff;
+  --nav-caps: none;
+  --card-tilt: 0deg;
+  color-scheme: dark;
+}
+:root[data-theme="light"]{
+  --bg:#ff5bab;
+  --bg-pattern: radial-gradient(circle, rgba(255,255,255,0.32) 2px, transparent 2px);
+  --bg-size: 32px 32px;
+  --surface:#ffffff;
+  --surface-alt:#ffffff;
+  --border:#161310;
+  --border-w:3px;
+  --ink:#161310;
+  --headline:#ffffff;
+  --ink-dim:#4a453e;
+  --ink-dim2:#6b6558;
+  --accent:#e6007e;
+  --shadow2:#161310;
+  --btn-ink:#161310;
+  --radius-card:4px;
+  --font-body:'M PLUS Rounded 1c', sans-serif;
+  --badge-font:'Press Start 2P', monospace;
+  --active-pill:#ffffff;
+  --nav-caps: small-caps;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top, 0px);}
+body{
+  margin:0;
+  background-color:var(--bg);
+  background-image:var(--bg-pattern);
+  background-size:var(--bg-size);
+  color:var(--ink);
+  font-family: var(--font-body);
+  transition: background-color .25s ease, color .25s ease;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2720%27%20height%3D%2720%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M12%2C21.35%20L10.55%2C20.03%20C5.4%2C15.36%202%2C12.28%202%2C8.5%20C2%2C5.42%204.42%2C3%207.5%2C3%20C9.24%2C3%2010.91%2C3.81%2012%2C5.09%20C13.09%2C3.81%2014.76%2C3%2016.5%2C3%20C19.58%2C3%2022%2C5.42%2022%2C8.5%20C22%2C12.28%2018.6%2C15.36%2013.45%2C20.04%20Z%27%20fill%3D%27%23fcacee%27%20stroke%3D%27%23161310%27%20stroke-width%3D%271%27/%3E%3C/svg%3E") 10 9, auto;
+}
+:root[data-theme="light"] body{
+  cursor: url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%2720%27%20height%3D%2720%27%20viewBox%3D%270%200%2024%2024%27%3E%3Cpath%20d%3D%27M12%2C21.35%20L10.55%2C20.03%20C5.4%2C15.36%202%2C12.28%202%2C8.5%20C2%2C5.42%204.42%2C3%207.5%2C3%20C9.24%2C3%2010.91%2C3.81%2012%2C5.09%20C13.09%2C3.81%2014.76%2C3%2016.5%2C3%20C19.58%2C3%2022%2C5.42%2022%2C8.5%20C22%2C12.28%2018.6%2C15.36%2013.45%2C20.04%20Z%27%20fill%3D%27%23161310%27%20stroke%3D%27%23161310%27%20stroke-width%3D%271%27/%3E%3C/svg%3E") 10 9, auto;
+}
+a{color:var(--accent); text-decoration:none;}
+img{max-width:100%;}
+h1,h2{font-family:'Modak',cursive; font-weight:400; margin:0;}
+h1{ color:var(--headline); text-shadow:4px 4px 0 #9999ff, 9px 9px 0 var(--shadow2); -webkit-text-stroke: 1px var(--accent); }
+:root[data-theme="light"] h1{ -webkit-text-stroke:0; text-shadow:4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+.wrap{max-width:1200px; margin:0 auto; padding:0 24px;}
+@media (max-width: 640px){ .wrap{padding:0 16px;} }
+
+/* marquee */
+.marquee-bar{width:100%; height:40px; background:var(--accent); overflow:hidden; display:flex; align-items:center; border-bottom:2px solid var(--border);}
+.marquee-track{display:flex; white-space:nowrap; animation:cr-marquee 14s linear infinite;}
+.marquee-track span{font-family:'IBM Plex Mono',monospace; font-weight:500; font-size:13px; letter-spacing:2px; color:var(--btn-ink); padding-right:40px;}
+@keyframes cr-marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* nav */
+.nav{display:flex; align-items:center; justify-content:space-between; padding:18px 0; border-bottom:1px solid var(--border);}
+.brand{display:flex; align-items:center; gap:10px; font-family:'Modak',cursive; font-size:20px; color:var(--headline); text-shadow:2px 2px 0 #9999ff, 4px 4px 0 var(--shadow2); -webkit-text-stroke: 0.5px var(--accent);}
+:root[data-theme="light"] .brand{ -webkit-text-stroke:0; text-shadow:2px 2px 0 var(--accent), 4px 4px 0 var(--shadow2); }
+.nav-links{display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+.pill{font-family: var(--font-body); font-weight:600; font-size:14px; color:var(--ink); background:var(--surface-alt); padding:9px 18px; border-radius:var(--radius-pill); border:2px solid var(--border); white-space:nowrap;}
+.pill.active{background:var(--active-pill); color:var(--btn-ink); border:2px solid var(--border); box-shadow:0 3px 0 var(--border);}
+.pill.accent{background:var(--accent); color:var(--btn-ink); font-weight:700; box-shadow:0 3px 0 var(--border);}
+.theme-toggle{display:flex; align-items:center; gap:3px; background:var(--surface-alt); border:2px solid var(--border); border-radius:999px; padding:3px; cursor:pointer;}
+.theme-toggle button{all:unset; width:26px; height:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+.theme-toggle button.on{background:var(--accent);}
+:root[data-theme="light"] .theme-toggle button.on{ background:#161310; }
+:root[data-theme="light"] .theme-toggle button.on svg{ stroke:#ffffff; }
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; gap:8px; font-family: var(--font-body); font-weight:700; font-size:15px; color:var(--btn-ink); background:var(--accent); padding:13px 26px; border-radius:var(--radius-pill); border:3px solid var(--border); box-shadow:0 4px 0 var(--border); cursor:pointer;}
+.btn.outline{background:transparent; color:var(--ink); border:3px solid var(--ink);}
+.btn.secondary{background:transparent; color:var(--ink); border:3px solid var(--ink);}
+:root[data-theme="light"] .btn.outline{color:var(--ink); border-color:var(--border);}
+
+/* hero */
+.hero{padding:64px 0 48px 0; position:relative;}
+.live-tag{display:flex; align-items:center; gap:8px; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:2px; color:var(--ink-dim); margin-bottom:18px;}
+.dot-live{width:8px; height:8px; border-radius:50%; background:#4dff88; animation:cr-blink 1.4s ease-in-out infinite;}
+@keyframes cr-blink{0%,100%{opacity:1}50%{opacity:.15}}
+.hero h1{font-size:clamp(44px,7vw,88px); line-height:.98; color:var(--headline); text-shadow:4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); max-width:900px;}
+.hero p{max-width:600px; font-size:18px; line-height:1.6; color:var(--ink-dim); margin-top:22px;}
+.hero .btnrow{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+
+/* section heading */
+.section-head{display:flex; align-items:baseline; gap:16px; margin:56px 0 32px 0;}
+.section-head h2{font-size:32px; color:var(--headline);}
+.rule{height:2px; flex-grow:1; background:repeating-linear-gradient(90deg, var(--border) 0, var(--border) 12px, transparent 12px, transparent 20px);}
+
+/* card grid */
+.grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:24px;}
+.card{background:var(--surface); border:var(--border-w) solid var(--border); border-radius:var(--radius-card); padding:18px; position:relative;}
+.card .thumb{width:100%; aspect-ratio:1/0.85; border-radius:2px; margin-bottom:14px; background:linear-gradient(135deg,#3a2f4a,#5c3a52);}
+.card h3{font-family:'Modak',cursive; font-weight:400; font-size:20px; margin:0 0 4px 0; color:var(--ink);}
+.card .meta{font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--ink-dim); letter-spacing:1px;}
+.card .price{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--accent); margin-top:8px;}
+
+/* chat widget */
+.chat-launcher{position:fixed; bottom:24px; right:24px; width:58px; height:58px; border-radius:50%; background:var(--accent); border:3px solid var(--border); display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 0 var(--border); z-index:999;}
+.chat-badge{position:absolute; top:-6px; right:-6px; width:20px; height:20px; border-radius:50%; background:#4dff88; color:#161310; font-size:10px; font-family:'IBM Plex Mono',monospace; font-weight:700; display:flex; align-items:center; justify-content:center; border:2px solid var(--border);}
+.chat-panel{display:none; flex-direction:column; position:fixed; bottom:94px; right:24px; width:300px; max-height:400px; background:var(--surface); border:3px solid var(--border); border-radius:16px; overflow:hidden; z-index:999;}
+.chat-panel.open{display:flex;}
+.chat-head{background:var(--accent); padding:12px 14px; display:flex; align-items:center; justify-content:space-between; color:var(--btn-ink); font-weight:700; font-size:13px;}
+.chat-close{cursor:pointer; font-weight:700;}
+.chat-msgs{padding:12px 14px; display:flex; flex-direction:column; gap:8px; font-size:13px; overflow-y:auto; background:var(--bg); max-height:220px;}
+.chat-msgs .sys{color:var(--ink-dim2); font-size:11px;}
+.chat-foot{display:flex; gap:6px; padding:10px; border-top:1px solid var(--border);}
+.chat-foot input{flex-grow:1; background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:8px 12px; color:var(--ink); font-family: var(--font-body); font-size:13px;}
+.chat-foot button{background:var(--accent); border:2px solid var(--border); border-radius:50%; width:32px; height:32px; cursor:pointer; flex-shrink:0;}
+
+/* footer */
+footer{margin-top:70px; padding:32px 0; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim2);}
+.social{display:flex; gap:12px;}
+.social a{width:34px; height:34px; border-radius:50%; background:var(--surface-alt); border:2px solid var(--border); display:flex; align-items:center; justify-content:center;}
+
+/* guestbook */
+.wall{background:var(--surface); border:1px dashed var(--border); border-radius:8px; padding:14px 16px;}
+.wall .name{font-family:'Modak',cursive; font-size:14px; color:#0095b6; -webkit-text-stroke: 1px #f4efe6;}
+:root[data-theme="light"] .wall .name{ color:#0095b6; -webkit-text-stroke: 1px #f4efe6; }
+.wall .msg{font-size:14px; color:var(--ink-dim); margin-top:4px;}
+.field{width:100%; background:var(--bg); border:2px solid var(--border); border-radius:8px; padding:12px 14px; color:var(--ink); font-family: var(--font-body); font-size:15px; margin-bottom:10px;}
+textarea.field{resize:none;}
+:root[data-theme="light"] .field::placeholder{ color:#ace1af; opacity:1; }
+
+/* dark-mode custom per-heading treatments (restored from latest design decisions) */
+.hero h1{ -webkit-text-stroke: 1px var(--accent); text-shadow:4px 4px 0 #9999ff, 9px 9px 0 var(--shadow2); }
+:root[data-theme="light"] .hero h1{ -webkit-text-stroke:0; text-shadow:4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+.heading-celadon{ -webkit-text-stroke: 1px #ace1af; text-shadow: 4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+.heading-rosa-celadon{ color:#ace1af; -webkit-text-stroke: 1px #a8a0b8; text-shadow: 4px 4px 0 #ace1af, 9px 9px 0 var(--shadow2); }
+.heading-bondi{ -webkit-text-stroke: 1px #0095b6; }
+.heading-bondi-shadow{ -webkit-text-stroke: 1px #0095b6; text-shadow: 4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+.heading-tiffany{ -webkit-text-stroke: 1px #0abab5; text-shadow: 4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+.heading-chat-badge{ -webkit-text-stroke: 1px #0095b6; text-shadow: 4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+:root[data-theme="light"] .heading-chat-badge{ -webkit-text-stroke:0; }
+.heading-periwinkle{ -webkit-text-stroke: 1px #9999ff; text-shadow: 4px 4px 0 var(--accent), 9px 9px 0 var(--shadow2); }
+:root[data-theme="light"] .heading-celadon,
+:root[data-theme="light"] .heading-rosa-celadon,
+:root[data-theme="light"] .heading-bondi,
+:root[data-theme="light"] .heading-bondi-shadow,
+:root[data-theme="light"] .heading-tiffany,
+:root[data-theme="light"] .heading-periwinkle{ -webkit-text-stroke: 0; }
+:root[data-theme="light"] .heading-rosa-celadon{ color: var(--headline); }
+.title-coral{ -webkit-text-stroke: 1px #9999ff; }
+:root[data-theme="light"] .title-coral{ -webkit-text-stroke: 0; }
+
+/* light-mode: same scrolling marquee as dark, distinct colors */
+:root[data-theme="light"] .marquee-bar{ background:#161310; height:40px; padding:0; }
+:root[data-theme="light"] .marquee-track{ animation:cr-marquee 14s linear infinite; }
+:root[data-theme="light"] .marquee-track span{ color:#ffffff; font-family:'Press Start 2P', monospace; font-size:11px; padding-right:40px; }
+@keyframes cr-blink2{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* light-mode: distinct pastel nav pills per link, small caps */
+:root[data-theme="light"] .nav-links .pill{ font-variant: small-caps; letter-spacing: .5px; }
+:root[data-theme="light"] .nav-links .pill:nth-of-type(1){ background:#ffffff; }
+:root[data-theme="light"] .nav-links .pill:nth-of-type(2){ background:#a9e0ff; }
+:root[data-theme="light"] .nav-links .pill:nth-of-type(3){ background:#d9c8ff; }
+:root[data-theme="light"] .nav-links .pill:nth-of-type(4){ background:#ffcf9e; }
+:root[data-theme="light"] .nav-links .pill:nth-of-type(5){ background:#b8f2d0; }
+:root[data-theme="light"] .nav-links .pill.accent{ background:#fff27a; color:var(--btn-ink); }
+
+/* light-mode: polaroid cards with washi tape */
+:root[data-theme="light"] .card{ transform:rotate(-2deg); }
+:root[data-theme="light"] .grid .card:nth-child(2){ transform:rotate(1.5deg); }
+:root[data-theme="light"] .grid .card:nth-child(3){ transform:rotate(-1deg); }
+:root[data-theme="light"] .grid .card:nth-child(4){ transform:rotate(2deg); }
+:root[data-theme="light"] .card{ position:relative; }
+:root[data-theme="light"] .card::before{ content:""; position:absolute; top:-10px; left:38%; width:50px; height:18px; background:rgba(169,224,255,.85); border:1px solid #161310; transform:rotate(-6deg); }
+
+/* visitor counter widget */
+.counter-box{ display:inline-flex; flex-direction:column; align-items:center; gap:6px; background:#0d0b09; border:3px solid var(--border); border-radius:10px; padding:12px 18px; position:absolute; top:24px; right:0; }
+@media (max-width:760px){ .counter-box{ position:static; margin-top:24px; } }
+.counter-box .label{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:2px; color:var(--ink-dim2); }
+.counter-box .num{ font-family:'IBM Plex Mono',monospace; font-size:26px; letter-spacing:5px; color:#4dff88; background:#0a0908; padding:4px 10px; border-radius:4px; }
+:root[data-theme="light"] .counter-box .label,
+:root[data-theme="light"] .counter-box .num{ font-family:'Press Start 2P', monospace; letter-spacing:2px; font-size:14px; }
+:root[data-theme="light"] .counter-box .label{ font-size:8px; }
+
+/* webring badges, light mode only */
+.webring{ display:none; gap:8px; }
+:root[data-theme="light"] .webring{ display:flex; }
+.webring .badge{ width:88px; height:31px; border:2px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Press Start 2P', monospace; font-size:7px; text-align:center; background:#ffffff; }
+
+/* light-mode: hero paragraph becomes a white card, exact match to Proposal C */
+:root[data-theme="light"] .hero p{ background:#ffffff; border:3px solid #161310; border-radius:16px; padding:18px 22px; color:#161310; }
+
+/* light-mode: hero buttons get their own solid pastel colors, not generic accent/outline */
+:root[data-theme="light"] .btn.primary{ background:#fff27a; border:3px solid #161310; box-shadow:5px 5px 0 #161310; }
+:root[data-theme="light"] .btn.secondary{ background:#a9e0ff; border:3px solid #161310; box-shadow:5px 5px 0 #161310; color:#161310; }
+
+/* dual markup: big headline vs small black pill badge, per theme */
+.badge-alt{ display:none; font-family:'Press Start 2P', monospace; font-size:12px; color:#fff; background:#161310; padding:9px 18px; border-radius:6px; margin-bottom:16px; }
+:root[data-theme="light"] .section-head h2{ display:none; }
+:root[data-theme="light"] .section-head .rule{ display:none; }
+:root[data-theme="light"] .badge-alt{ display:inline-block; }
+
+/* guestbook full-bleed white band, light mode only */
+:root[data-theme="light"] .guestbook-band{ background:#ffffff; border-top:4px dashed #161310; border-bottom:4px dashed #161310; margin:40px -24px 0 -24px; padding:56px 24px; }
+.guestbook-band{ margin:0; padding:0; }
+.guestbook-title-alt{ display:none; text-align:center; font-family:'M PLUS Rounded 1c', sans-serif; font-weight:700; font-size:32px; color:#161310; margin-bottom:10px; }
+:root[data-theme="light"] .guestbook-title-alt{ display:block; }
+:root[data-theme="light"] .guestbook-band .section-head{ display:none; }
+.guestbook-sub-alt{ display:none; text-align:center; font-family:'IBM Plex Sans', sans-serif; font-size:14px; color:#706a5e; margin-bottom:28px; }
+:root[data-theme="light"] .guestbook-sub-alt{ display:block; }
+
+:root[data-theme="light"] .field{ border-radius:999px; }
+:root[data-theme="light"] textarea.field{ border-radius:16px; }
+:root[data-theme="light"] .btn{ background:#fff27a; }
+:root[data-theme="light"] .btn[type="submit"], :root[data-theme="light"] form .btn{ background:#fff27a; box-shadow:4px 4px 0 #161310; align-self:center; }
+
+:root[data-theme="light"] .wall{ border:2px solid #161310; border-radius:16px 16px 16px 2px; }
+:root[data-theme="light"] #cr-wall-list .wall:nth-child(1){ background:#a9e0ff; }
+:root[data-theme="light"] #cr-wall-list .wall:nth-child(2){ background:#d9c8ff; }
+:root[data-theme="light"] #cr-wall-list .wall:nth-child(3){ background:#b8f2d0; }
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+
+</head>
+<body>
+
+  <div class="marquee-bar">
+    <div class="marquee-track"><span>★ APOYA ARTE EMERGENTE ★ HECHO EN EL CERRO ★ 100% ESCENA LOCAL MEXICANA ★ ARTISTAS INDEPENDIENTES ★ ★ APOYA ARTE EMERGENTE ★ HECHO EN EL CERRO ★ 100% ESCENA LOCAL MEXICANA ★ ARTISTAS INDEPENDIENTES ★ </span><span>★ APOYA ARTE EMERGENTE ★ HECHO EN EL CERRO ★ 100% ESCENA LOCAL MEXICANA ★ ARTISTAS INDEPENDIENTES ★ ★ APOYA ARTE EMERGENTE ★ HECHO EN EL CERRO ★ 100% ESCENA LOCAL MEXICANA ★ ARTISTAS INDEPENDIENTES ★ </span></div>
+  </div>
+
+
+  <nav class="nav wrap">
+    <div class="brand">
+      <svg width="30" height="30" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 130 L60 30 L90 80 L110 45 L140 130 Z" fill="none" stroke="var(--ink)" stroke-width="9" stroke-linejoin="round"/>
+        <circle cx="60" cy="20" r="13" fill="var(--accent)"/>
+      </svg>
+      CERRO ROSA
+    </div>
+    <div class="nav-links">
+      <a class="pill active" href="index.html">Inicio</a><a class="pill" href="perfil.html">Artistas</a><a class="pill" href="catalogo.html">Catálogo</a><a class="pill" href="historias.html">Historias</a><a class="pill" href="nosotros.html">Nosotros</a><a class="pill accent" href="contacto.html">Contacto</a>
+      
+      <div class="theme-toggle" id="cr-theme-toggle" role="button" aria-label="Cambiar tema" title="Cambiar tema claro/oscuro">
+        <button id="cr-moon" class="on"><svg width="14" height="14" viewBox="0 0 24 24" fill="var(--btn-ink)"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+        <button id="cr-sun"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--ink-dim2)" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+      </div>
+
+    </div>
+  </nav>
+
+<main class="wrap">
+
+<section class="hero">
+  <div class="live-tag"><div class="dot-live"></div> EN VIVO — ÚLTIMA ACTUALIZACIÓN: HOY</div>
+  <h1>ARTE DESDE<br>EL CERRO</h1>
+  <p>Distribuimos arte de la escena local mexicana. Nuestro limite es el cielo — directo de los artistas a donde tenga que llegar.</p>
+  <div class="btnrow">
+    <a class="btn primary" href="catalogo.html">Ver catálogo →</a>
+    <a class="btn secondary" href="perfil.html">Somos artista →</a>
+  </div>
+  <div class="counter-box"><div class="label">VISITANTES</div><div class="num">004821</div></div>
+</section>
+
+<div class="section-head">
+  <span class="badge-alt">✧ artistas de la semana ✧</span>
+  <h2 class="heading-rosa-celadon">ARTISTAS DE LA SEMANA</h2>
+  <div class="rule"></div>
+</div>
+<div class="grid">
+  <a class="card" href="perfil.html" style="text-decoration:none;">
+    <div class="thumb" style="background:linear-gradient(135deg,#3a2f4a,#5c3a52)"></div>
+    <h3 class="title-coral">Naya Osorio</h3>
+    <div class="meta">MURALISMO · IZTAPALAPA</div>
+  </a>
+  <div class="card">
+    <div class="thumb" style="background:linear-gradient(135deg,#2f4a3a,#3a5c52)"></div>
+    <h3 class="title-coral">Colectivo Fierro</h3>
+    <div class="meta">SERIGRAFÍA · ECATEPEC</div>
+  </div>
+  <div class="card">
+    <div class="thumb" style="background:linear-gradient(135deg,#4a3a2f,#5c4c3a)"></div>
+    <h3 class="title-coral">Renta Baja</h3>
+    <div class="meta">FOTOGRAFÍA · NEZA</div>
+  </div>
+</div>
+
+<div class="section-head">
+  <span class="badge-alt">✧ historias de la semana ✧</span>
+  <h2 class="heading-rosa-celadon">HISTORIAS DE LA SEMANA</h2>
+  <div class="rule"></div>
+</div>
+<div class="grid">
+  <a class="card" href="historias.html" style="text-decoration:none;">
+    <div class="thumb" style="background:linear-gradient(135deg,#3a2f4a,#5c3a52)"></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--accent); margin-bottom:6px;">REPORTAJE</div>
+    <h3 class="title-coral" style="font-size:18px;">Cómo Naya pintó su primer mural sin permiso</h3>
+    <div class="meta">NAYA OSORIO · IZTAPALAPA</div>
+  </a>
+  <a class="card" href="historias.html" style="text-decoration:none;">
+    <div class="thumb" style="background:linear-gradient(135deg,#2f4a3a,#3a5c52)"></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--accent); margin-bottom:6px;">CRÓNICA</div>
+    <h3 class="title-coral" style="font-size:18px;">Un sábado en el tianguis de arte de Iztapalapa</h3>
+    <div class="meta">COBERTURA DE EVENTO</div>
+  </a>
+  <a class="card" href="historias.html" style="text-decoration:none;">
+    <div class="thumb" style="background:linear-gradient(135deg,#4a3a2f,#5c4c3a)"></div>
+    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:1px; color:var(--accent); margin-bottom:6px;">ENSAYO</div>
+    <h3 class="title-coral" style="font-size:18px;">Por qué la serigrafía nunca pasó de moda</h3>
+    <div class="meta">SOBRE COLECTIVO FIERRO</div>
+  </a>
+</div>
+
+<div class="guestbook-band">
+  <div class="section-head">
+    <h2 class="heading-bondi">⋆｡°✩ FIRMA EL MURO ✩°｡⋆</h2>
+    <div class="rule"></div>
+  </div>
+  <div class="guestbook-title-alt">⋆｡°✩ FIRMA EL MURO ✩°｡⋆</div>
+  <div class="guestbook-sub-alt">como en los foros de antes — deja tu mensaje aquí abajo ↓</div>
+
+  <div style="display:flex; gap:40px; flex-wrap:wrap;">
+    <form id="cr-guest-form" style="flex:1; min-width:260px;">
+      <label style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim);">TU NOMBRE</label>
+      <input class="field" id="cr-guest-name" type="text" placeholder="ej. Betito desde Tepito">
+      <label style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-dim);">MENSAJE</label>
+      <textarea class="field" id="cr-guest-msg" rows="3" placeholder="¡Qué bueno que existen!"></textarea>
+      <button type="submit" class="btn">Firmar ✦</button>
+    </form>
+    <div style="flex:1; min-width:260px; display:flex; flex-direction:column; gap:12px;" id="cr-wall-list" data-collection="guestbook_home"></div>
+  </div>
+</div>
+
+<div class="section-head" style="margin-top:56px;">
+  <span class="badge-alt">✧ chat en vivo ✧</span>
+  <h2 class="heading-chat-badge">CHAT EN VIVO</h2>
+  <div class="rule"></div>
+</div>
+<p style="max-width:520px; color:var(--ink-dim); margin-top:-12px;">La comunidad hablando en vivo — de artista a artista, de vecino a vecino.</p>
+
+</main>
+<footer class="wrap">
+  <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+    <div>CERRO ROSA © 2026 — DISTRIBUIDORA CULTURAL — CDMX</div>
+    <div class="webring">
+      <div class="badge">CERRO<br>ROSA</div>
+      <div class="badge" style="background:#a9e0ff;">AMIGXS<br>DEL CERRO</div>
+      <div class="badge" style="background:#fff27a;">MEJOR VISTO<br>SIEMPRE</div>
+    </div>
+  </div>
+  <div class="social">
+    <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+    <a href="#" aria-label="Correo"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+  </div>
+</footer>
+
+  <div class="chat-launcher" id="cr-chat-launcher">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8c-1.1 0-2.2-.2-3.1-.6L4 21l1.7-4.6C4.6 15 4 13.6 4 12z" fill="var(--btn-ink)"/></svg>
+    <div class="chat-badge">•</div>
+  </div>
+  <div class="chat-panel" id="cr-chat-panel">
+    <div class="chat-head"><span>CHAT EN VIVO</span><span class="chat-close" id="cr-chat-close">✕</span></div>
+    <div class="chat-msgs" id="cr-chat-msgs">
+      <div class="sys">bienvenidx al chat de Cerro Rosa ✧</div>
+    </div>
+    <div class="chat-foot">
+      <input type="text" id="cr-chat-input" placeholder="escribe algo...">
+      <button id="cr-chat-send">➤</button>
+    </div>
+  </div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var params = new URLSearchParams(window.location.search);
+  var fromUrl = params.get('theme');
+  var saved = fromUrl || localStorage.getItem('cr-theme');
+  if(saved === 'light'){ root.setAttribute('data-theme','light'); }
+  if(saved){ try{ localStorage.setItem('cr-theme', saved); }catch(e){} }
+
+  function syncLinks(){
+    var theme = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    var links = document.querySelectorAll('a[href*=".html"]');
+    links.forEach(function(a){
+      try{
+        var u = new URL(a.getAttribute('href'), window.location.href);
+        u.searchParams.set('theme', theme);
+        a.setAttribute('href', u.toString());
+      }catch(e){}
+    });
+  }
+  syncLinks();
+  function updateToggleUI(){
+    var isLight = root.getAttribute('data-theme') === 'light';
+    var moon = document.getElementById('cr-moon');
+    var sun = document.getElementById('cr-sun');
+    if(moon && sun){
+      moon.classList.toggle('on', !isLight);
+      sun.classList.toggle('on', isLight);
+    }
+  }
+  updateToggleUI();
+  var toggle = document.getElementById('cr-theme-toggle');
+  if(toggle){
+    toggle.addEventListener('click', function(){
+      var isLight = root.getAttribute('data-theme') === 'light';
+      if(isLight){ root.removeAttribute('data-theme'); localStorage.setItem('cr-theme','dark'); }
+      else { root.setAttribute('data-theme','light'); localStorage.setItem('cr-theme','light'); }
+      updateToggleUI();
+      syncLinks();
+    });
+  }
+  var launcher = document.getElementById('cr-chat-launcher');
+  var panel = document.getElementById('cr-chat-panel');
+  var close = document.getElementById('cr-chat-close');
+  if(launcher && panel){
+    launcher.addEventListener('click', function(){ panel.classList.toggle('open'); });
+  }
+  if(close && panel){
+    close.addEventListener('click', function(){ panel.classList.remove('open'); });
+  }
+  var contactForm = document.getElementById('cr-contact-form');
+  if(contactForm){
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var status = document.getElementById('cr-contact-status');
+      if(status){ status.textContent = '¡Gracias! Te contestamos pronto ✧'; }
+      contactForm.reset();
+    });
+  }
+
+  var lastTrail = 0;
+  document.addEventListener('mousemove', function(e){
+    var now = Date.now();
+    if (now - lastTrail < 60) return;
+    lastTrail = now;
+    var isLight = root.getAttribute('data-theme') === 'light';
+    var heart = document.createElement('div');
+    heart.textContent = '❤';
+    heart.style.position = 'fixed';
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    heart.style.color = isLight ? '#161310' : '#fcacee';
+    heart.style.fontSize = (10 + Math.random()*6) + 'px';
+    heart.style.pointerEvents = 'none';
+    heart.style.zIndex = '99998';
+    heart.style.transform = 'translate(-50%, -50%) scale(1)';
+    heart.style.transition = 'opacity .8s ease-out, transform .8s ease-out';
+    heart.style.opacity = '.85';
+    document.body.appendChild(heart);
+    requestAnimationFrame(function(){
+      heart.style.opacity = '0';
+      heart.style.transform = 'translate(-50%, -140%) scale(.35)';
+    });
+    setTimeout(function(){ heart.remove(); }, 850);
+  });
+})();
+</script>
+<script>
+(function(){
+  // ⚠️ PEGA AQUÍ TU CONFIGURACIÓN DE FIREBASE (ver instrucciones que te di aparte)
+  var firebaseConfig = {
+    apiKey: "AIzaSyA4_IhqwQYCA6JWqLkPtjKzhciv36v5VGs",
+    authDomain: "cerro-rosa.firebaseapp.com",
+    projectId: "cerro-rosa",
+    storageBucket: "cerro-rosa.firebasestorage.app",
+    messagingSenderId: "204626248222",
+    appId: "1:204626248222:web:07b5ad4527437d98c5640f"
+  };
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore();
+
+  // Contador de visitantes, compartido en todo el sitio
+  (function(){
+    var counterEl = document.querySelector('.counter-box .num');
+    var ref = db.collection('cerro_rosa').doc('visits');
+    ref.set({ count: firebase.firestore.FieldValue.increment(1) }, { merge: true }).catch(function(){});
+    if(!counterEl) return;
+    ref.onSnapshot(function(doc){
+      if(doc.exists){
+        var n = doc.data().count || 0;
+        counterEl.textContent = String(n).padStart(6, '0');
+      }
+    });
+  })();
+
+  // Muro / guestbook (funciona en Inicio y en el perfil de cada artista)
+  (function(){
+    var form = document.getElementById('cr-guest-form');
+    var list = document.getElementById('cr-wall-list');
+    if(!form || !list) return;
+    var collectionName = list.getAttribute('data-collection') || 'guestbook_home';
+    var col = db.collection(collectionName);
+    col.orderBy('ts', 'desc').limit(30).onSnapshot(function(snap){
+      list.innerHTML = '';
+      if(snap.empty){
+        list.innerHTML = '<div style="color:var(--ink-dim); font-size:14px;">Sé el primero en firmar ✧</div>';
+        return;
+      }
+      snap.forEach(function(doc){
+        var d = doc.data();
+        var div = document.createElement('div');
+        div.className = 'wall';
+        div.innerHTML = '<div class="name">' + String(d.name || 'anónimo').replace(/</g,'&lt;') + '</div><div class="msg">' + String(d.msg || '').replace(/</g,'&lt;') + '</div>';
+        list.appendChild(div);
+      });
+    });
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var nameEl = document.getElementById('cr-guest-name');
+      var msgEl = document.getElementById('cr-guest-msg');
+      var name = (nameEl && nameEl.value ? nameEl.value.trim() : '') || 'anónimo';
+      var msg = (msgEl && msgEl.value ? msgEl.value.trim() : '');
+      if(!msg) return;
+      col.add({ name: name, msg: msg, ts: firebase.firestore.FieldValue.serverTimestamp() });
+      form.reset();
+    });
+  })();
+
+  // Chat en vivo, compartido en todo el sitio
+  (function(){
+    var msgs = document.getElementById('cr-chat-msgs');
+    var input = document.getElementById('cr-chat-input');
+    var send = document.getElementById('cr-chat-send');
+    if(!msgs || !send) return;
+    var col = db.collection('chat_general');
+    col.orderBy('ts', 'asc').limit(50).onSnapshot(function(snap){
+      msgs.innerHTML = '<div class="sys">bienvenidx al chat de Cerro Rosa ✧</div>';
+      snap.forEach(function(doc){
+        var d = doc.data();
+        var div = document.createElement('div');
+        div.innerHTML = '<span style="color:var(--accent);font-weight:700;">' + String(d.name || 'anon') + ':</span> ' + String(d.msg || '').replace(/</g,'&lt;');
+        msgs.appendChild(div);
+      });
+      msgs.scrollTop = msgs.scrollHeight;
+    });
+    function sendMsg(){
+      var val = (input.value || '').trim();
+      if(!val) return;
+      col.add({ name: 'visitante', msg: val, ts: firebase.firestore.FieldValue.serverTimestamp() });
+      input.value = '';
+    }
+    send.addEventListener('click', sendMsg);
+    input.addEventListener('keydown', function(e){ if(e.key === 'Enter'){ sendMsg(); } });
+  })();
+})();
+</script>
+</body>
+</html>
