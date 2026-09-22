@@ -391,9 +391,12 @@ textarea.field{resize:none;}
     <div class="chat-msgs" id="cr-chat-msgs">
       <div class="sys">bienvenidx al chat de Cerro Rosa ✧</div>
     </div>
-    <div class="chat-foot">
-      <input type="text" id="cr-chat-input" placeholder="escribe algo...">
-      <button id="cr-chat-send">➤</button>
+    <div class="chat-foot" style="flex-direction:column; gap:8px;">
+      <input type="text" id="cr-chat-name" placeholder="tu nombre" style="background:var(--bg); border:1px solid var(--border); border-radius:999px; padding:8px 12px; color:var(--ink); font-family: var(--font-body); font-size:13px;">
+      <div style="display:flex; gap:6px;">
+        <input type="text" id="cr-chat-input" placeholder="escribe algo...">
+        <button id="cr-chat-send">➤</button>
+      </div>
     </div>
   </div>
 
@@ -548,9 +551,17 @@ textarea.field{resize:none;}
   // Chat en vivo, compartido en todo el sitio
   (function(){
     var msgs = document.getElementById('cr-chat-msgs');
+    var nameInput = document.getElementById('cr-chat-name');
     var input = document.getElementById('cr-chat-input');
     var send = document.getElementById('cr-chat-send');
     if(!msgs || !send) return;
+    if(nameInput){
+      var savedName = localStorage.getItem('cr-chat-name');
+      if(savedName){ nameInput.value = savedName; }
+      nameInput.addEventListener('change', function(){
+        try{ localStorage.setItem('cr-chat-name', nameInput.value.trim()); }catch(e){}
+      });
+    }
     var col = db.collection('chat_general');
     col.orderBy('ts', 'asc').limit(50).onSnapshot(function(snap){
       msgs.innerHTML = '<div class="sys">bienvenidx al chat de Cerro Rosa ✧</div>';
@@ -565,7 +576,9 @@ textarea.field{resize:none;}
     function sendMsg(){
       var val = (input.value || '').trim();
       if(!val) return;
-      col.add({ name: 'visitante', msg: val, ts: firebase.firestore.FieldValue.serverTimestamp() });
+      var name = (nameInput && nameInput.value ? nameInput.value.trim() : '') || 'anónimo';
+      try{ localStorage.setItem('cr-chat-name', name); }catch(e){}
+      col.add({ name: name, msg: val, ts: firebase.firestore.FieldValue.serverTimestamp() });
       input.value = '';
     }
     send.addEventListener('click', sendMsg);
